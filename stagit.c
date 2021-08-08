@@ -520,7 +520,7 @@ writeheader(FILE *fp, const char *title)
 void
 writefooter(FILE *fp)
 {
-	fputs("</div>\n</body>\n</html>\n", fp);
+	fputs("</div>\n</div>\n</body>\n</html>\n", fp);
 }
 
 size_t

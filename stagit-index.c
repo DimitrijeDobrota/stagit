@@ -72,7 +72,6 @@ writeheader(FILE *fp)
 	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%sfavicon.png\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%scolors.css\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%sstyle.css\" />\n", relpath);
-	fputs("</head>\n<body>\n", fp);
 	fputs("</head>\n<body>\n<input type=\"checkbox\" id=\"theme-switch\" class=\"theme-switch\">\n<div id=\"page\">\n<label for=\"theme-switch\" class=\"switch-label\"></label>\n", fp);
 	fprintf(fp, "<table>\n<tr><td><img src=\"%slogo.png\" alt=\"\" width=\"32\" height=\"32\" /></td>\n"
 	        "<td><span class=\"desc\">", relpath);
@@ -88,7 +87,7 @@ writeheader(FILE *fp)
 void
 writefooter(FILE *fp)
 {
-	fputs("</tbody>\n</table>\n</div>\n</body>\n</html>\n", fp);
+	fputs("</tbody>\n</table>\n</div>\n</div>\n</body>\n</html>\n", fp);
 }
 
 int
