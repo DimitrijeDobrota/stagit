@@ -70,6 +70,7 @@ writeheader(FILE *fp)
 		"<title>", fp);
 	xmlencode(fp, description, strlen(description));
 	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%sfavicon.png\" />\n", relpath);
+	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%scolors.css\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%sstyle.css\" />\n", relpath);
 	fputs("</head>\n<body>\n", fp);
 	fprintf(fp, "<table>\n<tr><td><img src=\"%slogo.png\" alt=\"\" width=\"32\" height=\"32\" /></td>\n"
