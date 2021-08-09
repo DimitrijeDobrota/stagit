@@ -520,7 +520,7 @@ writeheader(FILE *fp, const char *title)
 void
 writefooter(FILE *fp)
 {
-	fputs("</div>\n</div>\n</body>\n</html>\n", fp);
+	fprintf(fp, "</div>\n</div>\n<script src=\"%smain.js\"></script>\n</body>\n</html>\n", relpath);
 }
 
 size_t

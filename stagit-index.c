@@ -87,7 +87,7 @@ writeheader(FILE *fp)
 void
 writefooter(FILE *fp)
 {
-	fputs("</tbody>\n</table>\n</div>\n</div>\n</body>\n</html>\n", fp);
+	fprintf(fp, "</tbody>\n</table>\n</div>\n</div>\n<script src=\"%smain.js\"></script>\n</body>\n</html>\n", relpath);
 }
 
 int

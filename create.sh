@@ -37,6 +37,7 @@ for dir in "${reposdir}/"*/; do
 	ln -sf log.html index.html
 	ln -sf ../style.css style.css
 	ln -sf ../colors.css colors.css
+	ln -sf ../main.js main.js
 	ln -sf ../logo.png logo.png
 	ln -sf ../favicon.png favicon.png
 
