@@ -16,7 +16,7 @@
 # - sh example_create.sh
 
 # path must be absolute.
-reposdir="/var/www/domains/git.codemadness.nl/home/src"
+reposdir="/var/www/git"
 curdir="$(pwd)"
 
 # make index.
@@ -31,7 +31,7 @@ for dir in "${reposdir}/"*/; do
 
 	mkdir -p "${curdir}/${d}"
 	cd "${curdir}/${d}" || continue
-	stagit -c ".cache" -u "https://git.codemadness.nl/$d/" "${reposdir}/${r}"
+	stagit -c ".cache" -u "https://git.dimitrijedobrota.com/$d/" "${reposdir}/${r}"
 
 	# symlinks
 	ln -sf log.html index.html

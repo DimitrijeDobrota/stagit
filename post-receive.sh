@@ -19,9 +19,9 @@ fi
 
 # config
 # paths must be absolute.
-reposdir="/home/src/src"
+reposdir="/var/www/git"
 dir="${reposdir}/${name}"
-htmldir="/home/www/domains/git.codemadness.org/htdocs"
+htmldir="/var/www/git-front"
 stagitdir="/"
 destdir="${htmldir}${stagitdir}"
 cachefile=".htmlcache"
@@ -34,17 +34,17 @@ fi
 cd "${dir}" || exit 1
 
 # detect git push -f
-force=0
-while read -r old new ref; do
-	test "${old}" = "0000000000000000000000000000000000000000" && continue
-	test "${new}" = "0000000000000000000000000000000000000000" && continue
+force=1
+# while read -r old new ref; do
+# 	test "${old}" = "0000000000000000000000000000000000000000" && continue
+# 	test "${new}" = "0000000000000000000000000000000000000000" && continue
 
-	hasrevs=$(git rev-list "${old}" "^${new}" | sed 1q)
-	if test -n "${hasrevs}"; then
-		force=1
-		break
-	fi
-done
+# 	hasrevs=$(git rev-list "${old}" "^${new}" | sed 1q)
+# 	if test -n "${hasrevs}"; then
+# 		force=1
+# 		break
+# 	fi
+# done
 
 # strip .git suffix.
 r=$(basename "${name}")
@@ -64,7 +64,7 @@ fi
 stagit-index "${reposdir}/"*/ > "${destdir}/index.html"
 
 # make pages.
-stagit -c "${cachefile}" -u "https://git.codemadness.nl/$d/" "${reposdir}/${r}"
+stagit -c "${cachefile}" -u "https://git.dimitrijedobrota.com/$d/" "${reposdir}/${r}"
 
 ln -sf log.html index.html
 ln -sf ../style.css style.css
